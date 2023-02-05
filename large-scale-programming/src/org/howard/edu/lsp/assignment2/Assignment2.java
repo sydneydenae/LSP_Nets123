@@ -30,12 +30,16 @@ public class Assignment2 {
 						
 			
 			if((myWord.length() > 3) && !(isNum(myWord))) {
-				wordCount.put(myWord, 1);
+				if(wordCount.containsKey(myWord)){
+					wordCount.put(myWord, wordCount.get(myWord)+1);
+				} else {
+					wordCount.put(myWord, 1);
+				}
 			}
 		}
 		
 		for (String i : wordCount.keySet()) {
-		      System.out.println( i + wordCount.get(i));
+		      System.out.println( i + " " + wordCount.get(i));
 		}
 		
 	}

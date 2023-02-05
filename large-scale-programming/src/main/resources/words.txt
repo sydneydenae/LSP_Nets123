@@ -1,1 +1,4 @@
-Design and code a program that reads a text file, and counts the number of times each word that it contains appears 100
+My name is Sydney and I was born in 2003
+I write SYDNEY in uppercase letters 2048503 times everyday
+I love to Write names
+I love to draw also
