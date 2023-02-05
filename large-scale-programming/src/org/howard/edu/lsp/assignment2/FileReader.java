@@ -1,7 +1,7 @@
 /**
  * Sydney Stokes
- * code from bpwoolfolk
  */
+
 package org.howard.edu.lsp.assignment2;
 
 import java.io.File;
