@@ -94,13 +94,7 @@ public class IntegerSet  {
 	
 	
 	public void intersect(IntegerSet b) {
-		for (int i : nums) {
-		     if(b.nums.contains(i)) {
-		    	 
-		     }else {
-		    	 remove(i);
-		     }
-		}
+		nums.retainAll(b.nums);
 	}; 
 	
 	

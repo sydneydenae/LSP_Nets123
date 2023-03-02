@@ -64,7 +64,7 @@ public class Driver {
 		set2.add(9);
 		System.out.println("\nValue of Set1 is: " + set1.toString());
 		System.out.println("Value of Set2 is: " + set2.toString());
-		//set1.intersect(set2);
+		set1.intersect(set2);
 		System.out.println("Intersection of set1 and set2 is: "+ set1.toString());
 		
 		set1.clear();
