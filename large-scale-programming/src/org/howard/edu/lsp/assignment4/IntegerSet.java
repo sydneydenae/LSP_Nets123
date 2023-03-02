@@ -68,6 +68,31 @@ public class IntegerSet  {
 		nums.add(a);
 	};
 	
+	public void remove(int i) {
+		nums.remove(i);
+	}
+	
+	public void union(IntegerSet b) {
+		nums.addAll(b.nums);
+	}; 
+	
+	public void intersect(IntegerSet b) {
+		nums.retainAll(b.nums);
+	}; 
+	
+	public void diff(IntegerSet b) {
+		nums.removeAll(b.nums);
+	}; 
+	
+	public boolean isEmpty() {
+		if (length() == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	
 	public String toString() {
 		String printedNums = "";
 		for(int i: nums) {
