@@ -4,8 +4,10 @@
 
 package org.howard.edu.lsp.assignment4;
 
+import org.howard.edu.lsp.assignment4.IntegerSet.IntegerSetException;
+
 public class Driver {	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IntegerSetException {
 		
 		IntegerSet set1 = new IntegerSet();
 		set1.add(1);
@@ -62,7 +64,7 @@ public class Driver {
 		set2.add(9);
 		System.out.println("\nValue of Set1 is: " + set1.toString());
 		System.out.println("Value of Set2 is: " + set2.toString());
-		set1.intersect(set2);
+		//set1.intersect(set2);
 		System.out.println("Intersection of set1 and set2 is: "+ set1.toString());
 		
 		set1.clear();
