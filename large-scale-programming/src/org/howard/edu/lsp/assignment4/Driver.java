@@ -12,30 +12,43 @@ public class Driver {
 		set1.add(2);
 		set1.add(2);
 		set1.add(7);
-		System.out.println("Value of Set1 is: " + set1.toString());
-		System.out.println("Length of Set1 is: " + set1.length());
-		System.out.println("Set 1 contains 2: " + set1.contains(2));
-		System.out.println("Largest value in Set1 is: " + set1.largest());
-		System.out.println("Smallest value in Set1 is: " + set1.smallest());
+		System.out.println("Value of set1 is: " + set1.toString());
+		System.out.println("Length of set1 is: " + set1.length());
+		System.out.println("set1 contains 2: " + set1.contains(2));
+		System.out.println("set1 contains 19: " + set1.contains(19));
+		System.out.println("Largest value in set1 is: " + set1.largest());
+		System.out.println("Smallest value in set1 is: " + set1.smallest());
 
 		
 		IntegerSet set2 = new IntegerSet();
 		set2.add(1);
 		set2.add(2);
 		set2.add(7);
-		System.out.println("Value of Set2 is: " + set2.toString());
-		System.out.println("Set1 and Set2 are equal: " + set2.equals(set1));
+		IntegerSet set3 = new IntegerSet();
+		set3.add(61);
+		set3.add(23);
+		System.out.println("\nValue of set1 is: " + set1.toString());
+		System.out.println("Value of set2 is: " + set2.toString());
+		System.out.println("Value of set3 is: " + set3.toString());
+		System.out.println("set1 and set2 are equal: " + set1.equals(set2));
+		System.out.println("set2 and set3 are equal: " + set2.equals(set3));
+
 		
+		System.out.println("\nValue of set2 is: " + set2.toString());
 		set2.remove(7);
-		System.out.println("Value of Set2 is: " + set2.toString());
+		set2.remove(1);
+		System.out.println("Value of set2 with values removed is: " + set2.toString());
 		
 		set1.clear();
-		System.out.println("Value of Set1 is: " + set1.toString());
+		System.out.println("\nValue of cleared set1 is: " + set1.toString());
 		set1.add(6);
 		set1.add(34);
 		set1.add(9);
 		set1.add(8);
-		System.out.println("Value of Set1 is: " + set1.toString());
+		set2.add(8);
+		set2.add(33);
+		System.out.println("\nValue of set1 is: " + set1.toString());
+		System.out.println("Value of set2 is: " + set2.toString());
 		set1.union(set2);
 		System.out.println("Set1 union Set2 is: "+ set1.toString());
 		
@@ -68,8 +81,8 @@ public class Driver {
 		set1.clear();
 		System.out.println("\nValue of Set1 is: " + set1.toString());
 		System.out.println("Value of Set2 is: " + set2.toString());
-		System.out.println("Set 1 is empty: "+ set1.isEmpty());
-		System.out.println("Set 2 is empty: "+ set2.isEmpty());
+		System.out.println("set 1 is empty: "+ set1.isEmpty());
+		System.out.println("set 2 is empty: "+ set2.isEmpty());
 
 	
 
@@ -99,7 +112,7 @@ public class Driver {
 		System.out.println(“Result of union of Set1 and Set2”);
 		
 		Edge cases
-		- Empty Set
+		- Empty set
 		- Same number set
 		*/
 	}
