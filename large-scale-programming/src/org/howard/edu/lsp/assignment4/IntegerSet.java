@@ -17,23 +17,25 @@ public class IntegerSet  {
 	public IntegerSet() {
 	}
 	
-	//clears internal representation of set
+	/**
+	 * clears internal representation of set
+	 */
 	public void clear() {
 		nums.clear();
 	};
 	
-	
-	// Returns the length of the set
+	/**
+	 * @return Returns the length of the set
+	 */
 	public int length() {
 		return nums.size();
 	};
 	
 	
-	/*
-     * Returns true if the 2 sets are equal, false otherwise;
-	* Two sets are equal if they contain all of the same values in ANY order.
-	*/
-	
+	/**
+	 * @param b is an integer set to compare to
+	 * @return true if they contain all of the same values in ANY order
+	 */
 	public boolean equals(IntegerSet b) {
 		if(nums.equals(b.nums)) {
 			return true;
@@ -42,7 +44,11 @@ public class IntegerSet  {
 		}
 	}; 
 	
-	//Returns true if the HashSet contains the value v
+	
+	/**
+	 * @param v is a number to check against
+	 * @return true if the HashSet contains the value v
+	 */
 	public boolean contains(int v) {
 		if(nums.contains(v)) {
 			return true;
@@ -51,6 +57,11 @@ public class IntegerSet  {
 		}
 	}; 
 	
+	/**
+	 * @return largest number in the set
+	 * @throws IntegerSetExceptio when empty
+
+	 */
 	public int largest() throws IntegerSetException{
 		//idk if this is the right way to call length
 		if (length() == 0) {
@@ -60,6 +71,10 @@ public class IntegerSet  {
 		}
 	}; 
 	
+	/**
+	 * @return smallest number in the set
+	 * @throws IntegerSetExceptio when empty
+	 */
 	public int smallest() throws IntegerSetException{
 		//idk if this is the right way to call length
 		if (length() == 0) {
@@ -69,6 +84,10 @@ public class IntegerSet  {
 		}
 	}; 
 	
+	/**
+	 * @param a is a number to add
+	 * adds a number to set
+	 */
 	public void add(int a) {
 		 if(nums.contains(a)){
 			
@@ -77,11 +96,19 @@ public class IntegerSet  {
 		 }
 	};
 	
+	/**
+	 * @param v is the number to remove
+	 * removes a number from a set
+	 */
 	public void remove(int r) {
 		int index = nums.indexOf(r);
 		nums.remove(index);
 	}
 	
+	/**
+	 * @param b is an IntegerSet obj from which we can add to the other numbers
+	 * creates a union from both InegerSets
+	 */
 	public void union(IntegerSet b) {
 		for (int i : b.nums) {
 		     if(nums.contains(i)) {
@@ -92,12 +119,18 @@ public class IntegerSet  {
 		}
 	}; 
 	
-	
+	/**
+	 * @param b is an IntegerSet obj from which we can add to the other numbers
+	 * changes the set to the intersection of  both sets
+	 */
 	public void intersect(IntegerSet b) {
 		nums.retainAll(b.nums);
 	}; 
 	
-	
+	/**
+	 * @param b is an IntegerSet obj from which we can add to the other numbers
+	 * changes the set to the differences between sets
+	 */
 	public void diff(IntegerSet b) {
 		for (int i : b.nums) {
 		     if(nums.contains(i)) {
@@ -108,6 +141,9 @@ public class IntegerSet  {
 		}
 	}; 
 	
+	/**
+	 * @return true if the HashSet is empty
+	 */
 	public boolean isEmpty() {
 		if (length() == 0) {
 			return true;
@@ -116,7 +152,9 @@ public class IntegerSet  {
 		}
 	}
 
-	
+	/**
+	 * @return string representation of the HashSet
+	 */
 	public String toString() {
 		String printedNums = "";
 		for(int i: nums) {
