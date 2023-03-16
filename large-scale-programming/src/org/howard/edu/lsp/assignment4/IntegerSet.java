@@ -86,7 +86,7 @@ public class IntegerSet  {
 	
 	/**
 	 * @param a is a number to add
-	 * adds a number to set
+	 * adds a number to set does nothing if it's already there
 	 */
 	public void add(int a) {
 		 if(nums.contains(a)){
@@ -98,7 +98,7 @@ public class IntegerSet  {
 	
 	/**
 	 * @param v is the number to remove
-	 * removes a number from a set
+	 * removes a number from a set, does nothing if it's not there
 	 */
 	public void remove(int r) {
 		int index = nums.indexOf(r);
