@@ -7,7 +7,6 @@ package org.howard.edu.lsp.assignment5;
 import org.howard.edu.lsp.assignment5.IntegerSet.IntegerSetException;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
-import java.util.*;
 
 
 class IntegerSetTest{
@@ -66,7 +65,6 @@ class IntegerSetTest{
 		test_set.add(9);
 		test_set.add(1);
 		test_set.add(700);
-		test_set.add(32);
 		assertTrue(test_set.largest() == 700);
 	}
 	
@@ -83,7 +81,6 @@ class IntegerSetTest{
 		test_set.add(9);
 		test_set.add(1);
 		test_set.add(700);
-		test_set.add(32);
 		assertTrue(test_set.smallest() == 1);
 	}
 	
@@ -96,43 +93,111 @@ class IntegerSetTest{
 	@Test
 	@DisplayName("Test case for add")
 	void testAdd() {
-		
+		test_set.add(3);
+		test_set.add(5);
+		test_set.add(28);
+		assertTrue(test_set.contains(28));
+
 	}
 	
 	@Test
 	@DisplayName("Test case for remove")
 	void testRemove() {
+		test_set.add(3);
+		test_set.add(5);
+		test_set.add(28);
+		test_set.remove(28);
+		assertFalse(test_set.contains(28));
 		
 	}
 	
 	@Test
 	@DisplayName("Test case for union")
 	void testUnion() {
+		IntegerSet test_setB = new IntegerSet();
+		IntegerSet test_setC = new IntegerSet();
+	
+		test_set.add(78);
+		test_set.add(55);
+		test_set.add(3);
+		
+		test_setB.add(4);
+		test_setB.add(55);
+		test_setB.add(6);
+		
+		test_setC.add(78);
+		test_setC.add(55);
+		test_setC.add(3);
+		test_setC.add(4);
+		test_setC.add(6);
+		
+		test_set.union(test_setB);
+		
+		assertTrue(test_set.equals(test_setC));
 		
 	}
 	
 	@Test
 	@DisplayName("Test case for intersect")
 	void testIntersect() {
+		IntegerSet test_setB = new IntegerSet();
+		IntegerSet test_setC = new IntegerSet();
+
+		test_set.add(78);
+		test_set.add(55);
+		test_set.add(3);
+		
+		test_setB.add(4);
+		test_setB.add(55);
+		test_setB.add(6);
+		
+		test_setC.add(55);
+		
+		test_set.intersect(test_setB);
+		
+		assertTrue(test_set.equals(test_setC));
 		
 	}
 	
 	@Test
 	@DisplayName("Test case for difference")
-	void testDifference() {
+	void testDiff() {
+		IntegerSet test_setB = new IntegerSet();
+		IntegerSet test_setC = new IntegerSet();
+
+		test_set.add(78);
+		test_set.add(55);
+		test_set.add(3);
+		
+		test_setB.add(4);
+		test_setB.add(55);
+		test_setB.add(6);
+		
+		test_setC.add(78);
+		test_setC.add(3);
+		
+		test_set.diff(test_setB);
+		
+		assertTrue(test_set.equals(test_setC));
 		
 	}
 	
 	@Test
 	@DisplayName("Test case for isEmpty")
-	void testEmpty() {
+	void testIsEmpty() {
 		assertTrue(test_set.isEmpty());
 	}
 	
 	@Test
 	@DisplayName("Test case for toString")
-	void testString() {
+	void testToString() {
+		test_set.add(1);
+		test_set.add(2);
+		test_set.add(3);
+		test_set.add(4);
+		test_set.add(5);
 		
+		assertEquals(test_set.toString(), "1 2 3 4 5 ");
 	}
 	@AfterEach
 	void tearDown() throws Exception {
