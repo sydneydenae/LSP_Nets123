@@ -24,6 +24,7 @@ class IntegerSetTest{
 		test_set.add(5);
 		test_set.add(8);
 		test_set.add(3);
+		assertTrue(test_set.nums.size()==3);
 		test_set.clear();
 		assertEquals(test_set.nums.size(), 0);
 	}
@@ -45,6 +46,8 @@ class IntegerSetTest{
 		test_setB.add(78);
 		test_setB.add(55);
 		test_setB.add(3);
+
+		
 		test_set.add(78);
 		test_set.add(55);
 		test_set.add(3);
@@ -69,7 +72,7 @@ class IntegerSetTest{
 	}
 	
 	@Test
-	@DisplayName("Test case for largest exception")
+	@DisplayName("Test case for largest exceptions")
 	void testLargestException() {
 		assertThrows(IntegerSetException.class, () -> test_set.largest());
 	}
@@ -85,7 +88,7 @@ class IntegerSetTest{
 	}
 	
 	@Test
-	@DisplayName("Test case for smallest exception")
+	@DisplayName("Test case for smallest exceptions")
 	void testSmallestException() {
 		assertThrows(IntegerSetException.class, () -> test_set.smallest());
 	}
@@ -95,6 +98,7 @@ class IntegerSetTest{
 	void testAdd() {
 		test_set.add(3);
 		test_set.add(5);
+		assertFalse(test_set.contains(28));
 		test_set.add(28);
 		assertTrue(test_set.contains(28));
 
@@ -106,6 +110,7 @@ class IntegerSetTest{
 		test_set.add(3);
 		test_set.add(5);
 		test_set.add(28);
+		assertTrue(test_set.contains(28));
 		test_set.remove(28);
 		assertFalse(test_set.contains(28));
 		
@@ -199,6 +204,7 @@ class IntegerSetTest{
 		
 		assertEquals(test_set.toString(), "1 2 3 4 5 ");
 	}
+	
 	@AfterEach
 	void tearDown() throws Exception {
 		test_set = null;
