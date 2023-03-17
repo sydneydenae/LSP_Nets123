@@ -18,7 +18,7 @@ public class IntegerRange implements Range {
     }
 
     public boolean contains(int value) {
-    	//implementing contains methods
+    	//implementing contains method
         return value >= lower && value <= upper;
     }
 

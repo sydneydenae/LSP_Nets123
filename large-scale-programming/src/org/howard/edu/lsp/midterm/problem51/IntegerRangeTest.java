@@ -29,7 +29,7 @@ class IntegerRangeTest {
 	@Test
 	@DisplayName("Test for contains")
 	void testContains() {
-		//testing contains functions
+		//testing the contains functions
 		assertTrue(my_range.contains(3400));
 		assertFalse(my_range.contains(87234));
 		assertTrue(my_range.contains(700));
